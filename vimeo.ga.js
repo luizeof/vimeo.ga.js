@@ -21,9 +21,17 @@ var vimeoGAJS = (window.vimeoGAJS) ? window.vimeoGAJS : {};
         var iframeId = $(iframe).attr('id');
 
         vimeoGAJS.eventMarker[iframeId] = {
-          'progress25' : false,
+          'progress0' : false,
+          'progress10' : false,
+          'progress20' : false,
+          'progress30' : false,
+          'progress40' : false,
           'progress50' : false,
-          'progress75' : false,
+          'progress60' : false,
+          'progress70' : false,
+          'progress80' : false,
+          'progress90' : false,
+          'progress100' : false,
           'videoPlayed' : false,
           'videoPaused' : false,
           'videoResumed' : false,
@@ -162,19 +170,59 @@ var vimeoGAJS = (window.vimeoGAJS) ? window.vimeoGAJS : {};
         return;
       }
 
-      if (vimeoGAJS.eventMarker[iframeId].timePercentComplete > 24 && !vimeoGAJS.eventMarker[iframeId].progress25) {
-        progress = 'Played video: 25%';
-        vimeoGAJS.eventMarker[iframeId].progress25 = true;
+      if (vimeoGAJS.eventMarker[iframeId].timePercentComplete >= 0 && !vimeoGAJS.eventMarker[iframeId].progress0) {
+        progress = 'Played video: 0%';
+        vimeoGAJS.eventMarker[iframeId].progress0 = true;
       }
 
-      if (vimeoGAJS.eventMarker[iframeId].timePercentComplete > 49 && !vimeoGAJS.eventMarker[iframeId].progress50) {
+      if (vimeoGAJS.eventMarker[iframeId].timePercentComplete > 10 && !vimeoGAJS.eventMarker[iframeId].progress10) {
+        progress = 'Played video: 10%';
+        vimeoGAJS.eventMarker[iframeId].progress10 = true;
+      }
+
+      if (vimeoGAJS.eventMarker[iframeId].timePercentComplete > 20 && !vimeoGAJS.eventMarker[iframeId].progress20) {
+        progress = 'Played video: 20%';
+        vimeoGAJS.eventMarker[iframeId].progress20 = true;
+      }
+
+      if (vimeoGAJS.eventMarker[iframeId].timePercentComplete > 30 && !vimeoGAJS.eventMarker[iframeId].progress30) {
+        progress = 'Played video: 30%';
+        vimeoGAJS.eventMarker[iframeId].progress30 = true;
+      }
+
+      if (vimeoGAJS.eventMarker[iframeId].timePercentComplete > 40 && !vimeoGAJS.eventMarker[iframeId].progress40) {
+        progress = 'Played video: 40%';
+        vimeoGAJS.eventMarker[iframeId].progress40 = true;
+      }
+
+      if (vimeoGAJS.eventMarker[iframeId].timePercentComplete > 50 && !vimeoGAJS.eventMarker[iframeId].progress50) {
         progress = 'Played video: 50%';
         vimeoGAJS.eventMarker[iframeId].progress50 = true;
       }
 
-      if (vimeoGAJS.eventMarker[iframeId].timePercentComplete > 74 && !vimeoGAJS.eventMarker[iframeId].progress75) {
-        progress = 'Played video: 75%';
-        vimeoGAJS.eventMarker[iframeId].progress75 = true;
+      if (vimeoGAJS.eventMarker[iframeId].timePercentComplete > 60 && !vimeoGAJS.eventMarker[iframeId].progress60) {
+        progress = 'Played video: 60%';
+        vimeoGAJS.eventMarker[iframeId].progress60 = true;
+      }
+
+      if (vimeoGAJS.eventMarker[iframeId].timePercentComplete > 70 && !vimeoGAJS.eventMarker[iframeId].progress70) {
+        progress = 'Played video: 70%';
+        vimeoGAJS.eventMarker[iframeId].progress70 = true;
+      }
+
+      if (vimeoGAJS.eventMarker[iframeId].timePercentComplete > 80 && !vimeoGAJS.eventMarker[iframeId].progress80) {
+        progress = 'Played video: 80%';
+        vimeoGAJS.eventMarker[iframeId].progress80 = true;
+      }
+
+      if (vimeoGAJS.eventMarker[iframeId].timePercentComplete > 90 && !vimeoGAJS.eventMarker[iframeId].progress90) {
+        progress = 'Played video: 90%';
+        vimeoGAJS.eventMarker[iframeId].progress90 = true;
+      }
+
+      if (vimeoGAJS.eventMarker[iframeId].timePercentComplete >= 99 && !vimeoGAJS.eventMarker[iframeId].progress100) {
+        progress = 'Played video: 100%';
+        vimeoGAJS.eventMarker[iframeId].progress100 = true;
       }
 
       if (progress) {
